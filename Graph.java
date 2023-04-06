@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class Graph {
-    private static final String NEWLINE = System.getProperty("line.separator");
     public int V;
     public Bag<Integer>[] adj;
 
@@ -28,4 +27,3 @@ public class Graph {
     
 
 }
-
