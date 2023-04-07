@@ -5,14 +5,18 @@ public class Bag<Item> implements Iterable<Item> {
     public Node<Item> first;
     public int n;
     
+    
     public static class Node<Item> {
             public Item item;
             public Node<Item> next;
+            
     }
 
     public Bag(){
         first = null;
         n = 0;
+        
+        
     }
     public int size() {
         return n;

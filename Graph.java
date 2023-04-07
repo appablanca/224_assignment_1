@@ -4,6 +4,7 @@ import java.util.*;
 public class Graph {
     public int V;
     public Bag<Integer>[] adj;
+    public int time;
 
     public Graph(int V){
         this.V = V;
@@ -11,6 +12,11 @@ public class Graph {
         for (int v = 0; v < V; v++){
             adj[v] = new Bag<Integer>();
         }
+        time = 0;
+    }
+
+    public int getTime (){
+        return time;
     }
 
     public void addE(int v,int w){
