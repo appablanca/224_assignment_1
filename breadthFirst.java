@@ -3,9 +3,9 @@ import java.io.*;
 
 
 public class breadthFirst {
-    public boolean[] marked;
-    public int[] edgeTo;
-    public int[] distTo;
+    public static boolean[] marked;
+    public static int[] edgeTo;
+    public static int[] distTo;
 
     public breadthFirst(Graph G, int s,int tar,int time){
         marked = new boolean[G.V];
@@ -15,7 +15,7 @@ public class breadthFirst {
         bfs(G,s,tar);
     }
 
-    public void bfs(Graph G, int s,int tar){
+    public static void bfs(Graph G, int s,int tar){
         Queue<Integer> q = new LinkedList<Integer>();
         q.offer(s);
         marked[s] = true;
