@@ -12,7 +12,7 @@ public class main {
         sc.nextLine();
         Graph graph = new Graph(N);
         
-        for (int i = 0; i ==  N;i++  ){
+        for (int i = 0; i ==  M*2;i++  ){
             a = sc.nextInt();
             b = sc.nextInt();
             graph.addE(a, b);
