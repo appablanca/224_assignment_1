@@ -21,12 +21,13 @@ public class main {
 
         int start = sc.nextInt();
         int end = sc.nextInt();
+        ShortestPath pathfind = new ShortestPath(graph,start,end);
 
-        depthFirst dfs = new depthFirst(graph,start,end,C);
-        for(int v = 0;v<graph.V;v++){
-            for(int w : graph.adj(v)){
-                System.out.println(v+"-"+w);
-            }
+        if(pathfind.hasPathTo(end)){
+            System.out.println(pathfind.distTo[end]);
+        }
+        else{
+            System.out.println("NO");
         }
 
         
