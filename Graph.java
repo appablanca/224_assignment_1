@@ -38,11 +38,13 @@ public class Graph {
 
 
     public class Bag<Item> implements Iterable<Item> {
-        private Node first;
-        private int N;
-        private class Node {
+        public Node first;
+        
+        public int N;
+        public class Node {
             Item item;
             Node next;
+            
         }
         public boolean isEmpty() {
             return first == null;
@@ -55,13 +57,14 @@ public class Graph {
             first = new Node();
             first.item = item;
             first.next = oldfirst;
+            
             N++;
         }
         public Iterator<Item> iterator() {
             return new ListIterator();
         }
-        private class ListIterator implements Iterator<Item> {
-            private Node current = first;
+        public class ListIterator implements Iterator<Item> {
+            public Node current = first;
             public boolean hasNext() {
                 return current != null;
             }

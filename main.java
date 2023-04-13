@@ -23,6 +23,11 @@ public class main {
         int end = sc.nextInt();
 
         depthFirst dfs = new depthFirst(graph,start,end,C);
+        for(int v = 0;v<graph.V;v++){
+            for(int w : graph.adj(v)){
+                System.out.println(v+"-"+w);
+            }
+        }
 
         
         

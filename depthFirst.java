@@ -15,8 +15,9 @@ public class depthFirst {
         marked[v] = true;
         for(int w : G.adj(v)){
             if(w == tar){
-                 G.time += flightTime;
-                 return;
+                G.time += flightTime; 
+                marked[w] = true;
+                return;
             }
             else if(!marked[w]){
                 G.time += flightTime;
