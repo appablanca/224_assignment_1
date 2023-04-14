@@ -12,7 +12,7 @@ public class main {
         sc.nextLine();
     
         Graph graph = new Graph(N+1);
-        for(int i = 0; i < N; i++){
+        for(int i = 0; i < M; i++){
             int a = sc.nextInt();
             int b = sc.nextInt();
             graph.addE(a,b);
@@ -21,19 +21,23 @@ public class main {
 
         int start = sc.nextInt();
         int end = sc.nextInt();
-        ShortestPath pathfind = new ShortestPath(graph,start,end);
+        
 
-        if(pathfind.hasPathTo(end)){
-            System.out.println(pathfind.distTo[end]);
-        }
-        else{
-            System.out.println("NO");
-        }
+        DijkstraSP dijkstra = new DijkstraSP(graph,start,end);
+        System.out.println(dijkstra.distTo(end)+1);
+        dijkstra.thePath(end);
+        System.out.println();
+
+
 
         
-        
-    
-        
+
+
+
+
+        graph.time = (C*dijkstra.distTo(end));
+        int weirdTime = ((graph.time)%T)*(dijkstra.distTo(end)-1);
+        graph.time += weirdTime;
         System.out.println(graph.getTime());
         
         
