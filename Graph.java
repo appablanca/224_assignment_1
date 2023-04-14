@@ -1,11 +1,19 @@
+    //-----------------------------------------------------
+    // Title: Graph
+    // Author: Feyzi Eren Gündoğdu
+    // ID: 52417418978
+    // Section: 1
+    // Assignment: 1
+    // Description: This is the graph class which inculdes graph data strucutre abd bag data structure.
+    //-----------------------------------------------
 import java.util.*;
-
+@SuppressWarnings("unchecked") //warning suppression for aesthetic purposes
 public class Graph {
-    public int V;
-    public Bag<Integer>[] adj;
-    public int time;
-
-    public Graph (int V) {
+    public int V; //V is the amount of vertices
+    public Bag<Integer>[] adj; //adj is the adjacency list
+    public int time; // time is the total time which is calculated in main.java
+    
+    public Graph (int V) { //constructor
         this.V = V;
         adj = (Bag<Integer>[]) new Bag[V];
         for (int v = 0; v < V; v++) {
@@ -16,20 +24,20 @@ public class Graph {
 
     
 
-    public void addE(int v, int w) {
+    public void addE(int v, int w) { //method that adds edges to the graph
         adj[v].add(w);
         adj[w].add(v);
     }
 
-    public Iterable<Integer> adj(int v) {
+    public Iterable<Integer> adj(int v) { // returns the adjacency list of a vertex
         return adj[v];
     }
 
-    public int getTime() {
+    public int getTime() { //returns the time
         return time;
     }
 
-    public int V() {
+    public int V() {//returns the amount of vertices
         return V;
     }
 
@@ -55,12 +63,12 @@ public class Graph {
 
 
 
-    public class Bag<Item> implements Iterable<Item> {
+    public class Bag<Item> implements Iterable<Item> { //bag data structure
 
         public Node first;
         public int N;
 
-        public class Node {
+        public class Node { //node class
             Item item;
             Node next;
             
@@ -74,7 +82,7 @@ public class Graph {
             return N;
         }
 
-        public void add(Item item) {
+        public void add(Item item) {//add method
             Node oldfirst = first;
             first = new Node();
             first.item = item;
@@ -86,7 +94,7 @@ public class Graph {
             return new ListIterator();
         }
 
-        public class ListIterator implements Iterator<Item> {
+        public class ListIterator implements Iterator<Item> {//iterator class
             public Node current = first;
             public boolean hasNext() {
                 return current != null;
@@ -104,7 +112,7 @@ public class Graph {
             }
         }
 
-        public String toString() {
+        public String toString() { //toString method used while testing the algorithm 
             String s = "";
             for (Item item : this) {
                 s += item + " ";
